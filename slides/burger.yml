@@ -11,7 +11,7 @@ left:
       dodaj('kotlet')
       dodaj('cebula')
       dodaj('gora')
-    size: xxl
+    size: xl
   monitor: true
 right:
   burger: true
