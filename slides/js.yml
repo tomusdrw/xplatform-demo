@@ -2,7 +2,7 @@ name: JS
 title: JavaScript
 code:
   mode: javascript
-  content: "/* Here you can write some JavaScript! */\n"
+  content: "/* Here you can write some JavaScript! */\nconsole.log('Hello!');"
   size: xl
 jsrunner: true
 monitor: console_log

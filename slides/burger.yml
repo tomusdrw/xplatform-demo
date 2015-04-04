@@ -3,7 +3,7 @@ title: Burgers
 serverRunner: python
 left:
   code:
-    mode: burger
+    mode: python
     content: |
       dodaj('dol')
       dodaj('pomidor')

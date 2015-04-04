@@ -1,4 +1,5 @@
 title: NodeJS + Files
+name: NodeJS + Files
 serverRunner: expressjs
 workspace:
   active: 'index|js'
