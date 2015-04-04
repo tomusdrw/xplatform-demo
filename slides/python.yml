@@ -1,0 +1,12 @@
+name: Python
+title: Python
+code:
+  mode: python
+  content: |
+      def hello(name):
+          print ("Hello %s!" % name)
+
+      hello("Python!")
+  size: xl
+serverRunner: python
+monitor: true

@@ -1,0 +1,8 @@
+name: JS
+title: JavaScript
+code:
+  mode: javascript
+  content: "/* Here you can write some JavaScript! */\n"
+  size: xl
+jsrunner: true
+monitor: console_log

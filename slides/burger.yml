@@ -1,0 +1,17 @@
+name: "Burgers!"
+title: Burgers
+serverRunner: python
+left:
+  code:
+    mode: burger
+    content: |
+      dodaj('dol')
+      dodaj('pomidor')
+      dodaj('salata')
+      dodaj('kotlet')
+      dodaj('cebula')
+      dodaj('gora')
+    size: xxl
+  monitor: true
+right:
+  burger: true

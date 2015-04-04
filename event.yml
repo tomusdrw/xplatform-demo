@@ -1,0 +1,22 @@
+---
+  title: "XPlatform Demo"
+  name: "xplaDemo"
+  image: "https://rawgit.com/tomusdrw/xplatform-demo/master/image.png"
+  baseSlide: "54e12144aa9d295d4f7d9c1a"
+  visible: false
+  iterations: 
+    - 
+      title: "Iteration 1"
+      status: "available"
+      tasks: []
+      materials:
+        -
+          title: 'Demo'
+          deck:
+            deck: !include ./deck.yml 
+        - 
+          title: "AngularJS Video"
+          url: "https://devmeetings.github.io/devmeeting-angular/sounds/angular-total-01.ogg"
+          material: "5407095e8cc21c5423e1bfa5"
+          annotations: !include ./annotations1.yml
+    

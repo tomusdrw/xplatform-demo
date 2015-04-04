@@ -1,0 +1,8 @@
+name: nodejs
+title: nodejs
+code:
+  mode: javascript
+  content: "var fs = require('fs');\n\nconsole.log(Object.keys(fs));"
+  size: xl
+serverRunner: nodejs
+monitor: true

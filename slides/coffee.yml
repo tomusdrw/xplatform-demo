@@ -1,0 +1,8 @@
+name: Coffee
+title: CoffeeScript
+code:
+  mode: coffee
+  content: "# Let's write some CoffeeScript\n"
+  size: xl
+jsrunner: coffee
+monitor: console_log

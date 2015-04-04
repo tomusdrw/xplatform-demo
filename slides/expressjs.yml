@@ -1,0 +1,93 @@
+title: NodeJS + Files
+serverRunner: expressjs
+workspace:
+  active: 'index|js'
+  withBackground: true
+  showUrl: true
+  size: xxl
+  tabs:
+    'index|js':
+      content: |
+        "use strict";
+        var http = require("http");
+        var fs = require("fs");
+        var socketio = require("socket.io");
+
+        var server = http.Server(function (req, res) {
+          console.log("Requesting " + req.url);
+          var file = req.url.replace('/', '') || 'index.html';
+          res.send(fs.readFileSync(file));
+        });
+
+        var io = socketio.listen(server);
+        io.sockets.on("connection", function (socket) {
+          socket.on("client_ready", function () {
+            socket.emit("new_operation", {});
+          });
+          socket.on("disconnect", function () {
+            console.log("Client disconnected");
+          });
+        });
+      
+        server.listen(process.env.PORT);
+    'index|html':
+      content: |
+        <!DOCTYPE html>
+        <html lang="en">
+            <head>
+                <meta charset="utf-8">
+                <title>BitCoin Operations - Visualization</title>
+                <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&amp;sensor=false&amp;libraries=visualization">
+                </script>
+            <link rel="stylesheet" src="style.css"></head>
+
+            <body>
+                <div id="map"></div>
+                <script src="/socket.io/socket.io.js"></script>
+            <script src="main.js"></script></body>
+        </html>
+    'style.css':
+      content: |
+        html, body, #map {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    'main.js':
+      content: |
+        (function (google, document) {
+          "use strict";
+          
+          var map,
+              markers = [];
+
+          function initialize() {
+              var mapOptions = {
+                  zoom: 3,
+                  center: new google.maps.LatLng(40.0, 40.0),
+                  mapTypeId: google.maps.MapTypeId.ROADMAP
+              };
+
+              map = new google.maps.Map(document.getElementById("map"), mapOptions);
+          }
+
+          google.maps.event.addDomListener(window, "load", initialize);
+
+          function newMarker(location, hash) {
+              return new google.maps.Marker({
+                  position: location,
+                  map: map,
+                  title: hash
+              });
+          }
+
+          function collectMarker(data) {
+              markers.push(newMarker(new google.maps.LatLng(data.lat, data.lng), data.hash));
+
+              if (markers.length > 100) {
+                  markers.shift();
+              }
+          }
+          
+          // window.port
+      } (window.google, window.document));
