@@ -46,14 +46,14 @@ workspace:
                 <script src="/socket.io/socket.io.js"></script>
             <script src="main.js"></script></body>
         </html>
-    'style.css':
+    'style|css':
       content: |
         html, body, #map {
             height: 100%;
             margin: 0;
             padding: 0;
         }
-    'main.js':
+    'main|js':
       content: |
         (function (google, document) {
           "use strict";
@@ -90,4 +90,4 @@ workspace:
           }
           
           // window.port
-      } (window.google, window.document));
+        } (window.google, window.document));

@@ -1,12 +1,12 @@
 ---
 title: 'XPlatform Demo'
 slides:
-  - !include ./slides/js.yml
-  - !include ./slides/coffee.yml
+  - content: !include ./slides/js.yml
+  - content: !include ./slides/coffee.yml
   - !workspace 
       name: 'AngularJS'
       path: ./slides/angularjs
-  - !include ./slides/node.yml
-  - !include ./slides/expressjs.yml
-  - !include ./slides/java.yml
-  - !include ./slides/burger.yml
+  - content: !include ./slides/node.yml
+  - content: !include ./slides/expressjs.yml
+  - content: !include ./slides/java.yml
+  - content: !include ./slides/burger.yml
